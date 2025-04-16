@@ -213,14 +213,13 @@ document.querySelector(".finalizar").addEventListener("click", () => {
   mensagem += `🍧 *Itens do Pedido:*\n`;
 
   listaItens.forEach((item, index) => {
-    mensagem += `• ${index + 1}. ${item.textContent.trim()}\n`;
+    mensagem += `${index + 1}°. ${item.textContent.trim()}\n`;
   });
 
   mensagem += `\n💰 *Total:* ${total}\n`;
   mensagem += `💳 *Pagamento:* ${pagamento.value}\n`;
 
-  // Codifica a mensagem e abre o WhatsApp
-  const numeroWhats = "+5588981252883"; // Substitui com o número real (com DDD e sem +)
+  const numeroWhats = "+5588981252883";
   const url = `https://wa.me/${numeroWhats}?text=${encodeURIComponent(
     mensagem
   )}`;
