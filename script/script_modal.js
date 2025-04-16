@@ -224,4 +224,9 @@ document.querySelector(".finalizar").addEventListener("click", () => {
     mensagem
   )}`;
   window.open(url, "_blank");
+
+  carrinho = [];
+  atualizarCart();
+  alert("✅ Pedido enviado com sucesso! O carrinho foi esvaziado.");
+  location.reload();
 });
