@@ -1,0 +1,245 @@
+:root {
+  --roxo-acai: #73009d;
+  --roxo-escuro: #4b0082;
+  --roxo-profundao: #2e003e;
+
+  --lilas-suave: #cba6f7;
+  --rosa-acai: #d36ca2;
+  --verde-menta: #b2f2bb;
+
+  --branco-gelo: #f8f8ff;
+  --preto-sombra: rgba(0, 0, 0, 0.2);
+
+  --gradiente-acai: linear-gradient(
+    to bottom right,
+    var(--roxo-escuro),
+    var(--roxo-acai)
+  );
+}
+
+.modal-acai {
+  visibility: hidden;
+  opacity: 0;
+  z-index: 100;
+  position: fixed;
+  width: 70%;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--roxo-acai);
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px #2e003eb9;
+  pointer-events: none;
+  transition: 0.5s ease-in-out;
+}
+.modal-acai.show {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-acai .modal-img {
+  width: 55%;
+  height: 100%;
+}
+
+.modal-acai .modal-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.container {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 2%;
+}
+.container .descricao {
+  width: 100%;
+  align-items: center;
+  padding: 10px 15px;
+  margin-top: 1rem;
+}
+.container .descricao .modal-title {
+  font-family: "Fredoka One", sans-serif !important;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.container .descricao .modal-price {
+  font-size: 35px;
+  text-align: center;
+  padding: 25px 0;
+  font-weight: 600;
+  overflow-y: auto;
+}
+.adicionais {
+  width: 100%;
+  height: 400px;
+}
+.adicionais p {
+  font-size: 20px;
+  font-weight: 600;
+}
+form {
+  width: 100%;
+  max-width: auto;
+  margin: 1rem auto;
+}
+
+fieldset {
+  border: 2px solid var(--lilas-suave);
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: var(--roxo-profundao);
+  color: var(--branco-gelo);
+}
+
+legend {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--verde-menta);
+}
+
+fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+fieldset {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem 1rem;
+}
+
+.container button {
+  position: relative;
+  width: 80%;
+  padding: 10px 15px;
+  background-color: var(--roxo-profundao);
+  color: var(--branco-gelo);
+  border-radius: 15px;
+  font-size: 20px;
+  border: none;
+  box-shadow: 5px 10px 15px #00000065;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.container button:hover {
+  transform: scale(1.02);
+  background-color: #4c0181;
+  border: 1px solid var(--lilas-suave);
+  color: var(--branco-gelo);
+}
+.container button:active {
+  background-color: var(--verde-menta);
+  border: 1px solid var(--verde-menta);
+  transform: scale(1.05);
+}
+
+#fecharModal {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 30px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-geral {
+  display: none;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000000a8;
+  transition: 0.5s ease-in-out;
+}
+
+.overlay-geral.visible {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .modal-acai {
+    flex-direction: column;
+    width: 95%;
+    height: 95%;
+    padding-bottom: 50px;
+  }
+
+  .modal-acai .modal-img {
+    width: 100%;
+    height: 40%;
+  }
+
+  .modal-acai .modal-img img {
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+  }
+
+  .container {
+    width: 100%;
+  }
+  .container .descricao {
+    width: 100%;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  .container .descricao .modal-title {
+    font-size: 25px;
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  .container .descricao .modal-price {
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .adicionais {
+    width: 100%;
+    height: 250px;
+  }
+
+  .adicionais p {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  form {
+    width: 100%;
+    max-width: auto;
+    margin: 0 auto;
+    height: 200px;
+  }
+
+  fieldset {
+    height: 180px;
+    border: 2px solid var(--lilas-suave);
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: var(--roxo-profundao);
+    color: var(--branco-gelo);
+    overflow: auto;
+  }
+}

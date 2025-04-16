@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/style_pedidos.css" />
+    <link rel="stylesheet" href="/style/style_modal_açai.css" />
+    <link rel="stylesheet" href="/style/style_carrinho.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- SweetAlert2 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
+    <script src="/script/script_modal.js" defer></script>
+    <title>Açai</title>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <a href="/index.html">
+      <button class="inicio">
+        <i class="bi bi-chevron-left"></i>Início
+      </button></a
+    >
+    <button class="cart">
+      <i class="bi bi-cart-check"></i>Meu Pedido
+    </button></a
+    <main class="acai">
+      <div class="container-acai">
+        <div class="box-acai">
+          <div class="box-img">
+            <img src="/img/acai3.jpg" alt="açai de 300ml" />
+          </div>
+          <div class="descricao">
+            <p class="title">Açaí 300ml</p>
+            <p class="price" data-price="12">R$12,00</p>
+            <div class="box-button">
+              <button>Personalizar Pedido</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="box-acai">
+          <div class="box-img">
+            <img src="/img/acai2.jpg" alt="açai de 500ml" />
+          </div>
+          <div class="descricao">
+            <p class="title">Açaí 500ml</p>
+            <p class="price" data-price="">R$18,00</p>
+            <div class="box-button">
+              <button>Personalizar Pedido</button>
+            </div>
+          </div>
+        </div>
+        <div class="box-acai">
+          <div class="box-img">
+            <img src="/img/acai1.jpg" alt="açai de 1000ml" />
+          </div>
+          <div class="descricao">
+            <p class="title">Açaí 1000ml</p>
+            <p class="price" data-price="25">R$25,00</p>
+            <div class="box-button">
+              <button>Personalizar Pedido</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="modal-acai" id="modal">
+      <i class="bi bi-x-circle" id="fecharModal"></i>
+      <div class="modal-img">
+        <img src="/img/modal-img.jpg" alt="açai de 1000ml" class="img-modal" />
+      </div>
+      <div class="container">
+        <div class="descricao">
+          <p class="modal-title">Açai modal</p>
+          <p class="modal-price" data-price="8">R$00,00</p>
+        </div>
+        <div class="adicionais">
+          
+          <form class="form-adicionais">
+            <p>Selecione ate 5 adicionais:</p>
+            <fieldset>
+              <legend>Adicionais:</legend>
+              <label
+                ><input type="checkbox" name="mix" value="banana" />
+                Banana</label
+              >
+              <label
+                ><input type="checkbox" name="mix" value="morango" />
+                Morango</label
+              >
+              <label
+                ><input type="checkbox" name="mix" value="kiwi" /> Kiwi</label
+              >
+              <label
+                ><input type="checkbox" name="mix" value="manga" /> Manga</label
+              >
+              <label
+                ><input type="checkbox" name="mix" value="blueberry" />
+                Blueberry</label
+              ><label
+                ><input type="checkbox" name="mix" value="granola" />
+                Granola</label
+              >
+              <label
+                ><input type="checkbox" name="mix" value="aveia" /> Aveia</label
+              >
+              <label
+                ><input type="checkbox" name="mix" value="sucrilhos" />
+                Sucrilhos</label
+              >
+              <label
+                ><input type="checkbox" name="mix" value="flocos-arroz" />
+                Flocos de arroz</label
+              >
+              <label
+                ><input type="checkbox" name="mix" value="leite-condensado" />
+                Leite condensado</label
+              >
+              <label
+                ><input type="checkbox" name="mix" value="nutella" />
+                Nutella</label
+              >
+              <label
+                ><input type="checkbox" name="mix" value="paçoca" />
+                Paçoca</label
+              >
+              <label
+                ><input type="checkbox" name="mix" value="mel" /> Mel</label
+              >
+              <label
+                ><input type="checkbox" name="mix" value="castanhas" />
+                Castanhas</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="mix"
+                  value="chocolate-granulado"
+                />
+                Chocolate granulado</label
+              >
+              <label
+                ><input type="checkbox" name="mix" value="coco-ralado" /> Coco
+                ralado</label
+              >
+              <label
+                ><input type="checkbox" name="mix" value="leite-em-po" /> Leite
+                em pó</label
+              >
+            </fieldset>
+          </form>
+        </div>
+        <button id="addPedido">Adicionar Pedido</button>
+      </div>
+    </div>
+    <div class="overlay-geral"></div>
+
+    <div class="carrinho-acai">
+      <i class="bi bi-x-lg" id="iconefechar"></i>
+      <h2>🛒 Carrinho</h2>
+    
+      <ul class="lista-itens">
+      </ul>
+    
+      <div class="total"></div>
+    
+    
+    
+      <form class="formulario-pedido">
+        <h3>👤 Dados Pessoais</h3>
+        <label>
+          Nome:
+          <input type="text" name="nome" required />
+        </label>
+        <label>
+          Telefone:
+          <input type="tel" name="telefone" required />
+        </label>
+    
+        <h3>📍 Endereço</h3>
+        <label>
+          Rua:
+          <input type="text" name="rua" required />
+        </label>
+        <label>
+          Número:
+          <input type="text" name="numero" required />
+        </label>
+        <label>
+          Bairro:
+          <input type="text" name="bairro" required />
+        </label>
+        <label>
+          Complemento:
+          <input type="text" name="complemento" />
+        </label>
+    
+        <h3 class="h3-forma">💳 Forma de Pagamento</h3>
+        <label class="forma-pagamento">
+          <input type="radio" name="pagamento" value="dinheiro" required />
+          Dinheiro
+        </label>
+        <label class ="forma-pagamento">
+          <input type="radio" name="pagamento" value="pix" required />
+          PIX
+        </label>
+        <label class ="forma-pagamento">
+          <input type="radio" name="pagamento" value="cartao" required />
+          Cartão
+        </label>
+      </form>
+    
+      <button class="finalizar">Finalizar Pedido</button>
+    </div>
+    
+  </body>
+</html>
