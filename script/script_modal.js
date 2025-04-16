@@ -216,7 +216,7 @@ document.querySelector(".finalizar").addEventListener("click", () => {
     mensagem += `${index + 1}°. ${item.textContent.trim()}\n`;
   });
 
-  mensagem += `\n💰 *Total:* ${total}\n`;
+  mensagem += `\n💰 *${total}*\n`;
   mensagem += `💳 *Pagamento:* ${pagamento.value}\n`;
 
   const numeroWhats = "+5588981252883";
