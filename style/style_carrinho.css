@@ -137,6 +137,31 @@
   margin-bottom: 20px;
 }
 
+.item-pedido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: var(--roxo-escuro);
+  color: var(--branco-gelo);
+  font-size: 16px;
+}
+.item-pedido button {
+  background-color: var(--lilas-suave);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s ease-in-out;
+}
+.item-pedido span {
+  font-weight: bold;
+}
+
 @media screen and (max-width: 768px) {
   .carrinho-acai {
     border-radius: 0;

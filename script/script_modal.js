@@ -127,20 +127,39 @@ function atualizarCart() {
     totalPAgar += valorFinal;
     const produto = document.createElement("li");
     produto.innerHTML = `
+     <div class="item-pedido">
     <div>
     <p><strong>${cartTitulo}</strong></p>
     <p><strong>Quantidade: </strong>${cartQtd}</p>
     <p><strong>Subtotal: </strong>R$${cartPreco.toFixed(2)}</p>
     <p><strong>Adicionais: </strong> ${cartAdc.join(", ")}</p>
     </div>
-    
+    <button class="remove" data-index="${index}">Remover</button>
+     </div>
     `;
     cartItem.appendChild(produto);
   });
 
   cartTotal.innerHTML = `<strong>Total: </strong>R$${totalPAgar.toFixed(2)}`;
+
+  const contador = document.getElementById("contador");
+
+  if (carrinho.length > 0) {
+    contador.style.display = "block";
+    contador.textContent = carrinho.length;
+  } else {
+    contador.style.display = "none";
+  }
 }
 
+document.addEventListener("click", function (event) {
+  const removeBtn = event.target.closest(".remove");
+  if (removeBtn) {
+    const index = parseInt(removeBtn.dataset.index);
+    carrinho.splice(index, 1);
+    atualizarCart();
+  }
+});
 /*   ----------------- limitador de adiconais------------ */
 
 const checkboxes = document.querySelectorAll(
