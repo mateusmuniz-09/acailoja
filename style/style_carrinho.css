@@ -83,7 +83,8 @@
   font-size: 24px;
 }
 .formulario-pedido {
-  padding: 0 4%;
+  padding: 0 5%;
+  height: auto;
 }
 
 .carrinho-acai .formulario-pedido label:not(.forma-pagamento) {

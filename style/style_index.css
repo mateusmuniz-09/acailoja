@@ -11,16 +11,22 @@
   font-family: "Fredoka One", sans-serif !important;
 }
 body {
-  background-image: url(/img/body.png);
+  width: 100%;
+  height: 100vh;
+  background-image: url(/img/bacground-desktop.svg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  width: 100%;
+}
+.box-body {
+  width: 60%;
+  margin: 0 auto;
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+  justify-content: space-between;
   align-items: center;
+  padding: 2rem 5%;
 }
 
 .container-body {
@@ -28,8 +34,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 400px;
-  height: 500px;
+  width: 350px;
+  height: 450px;
   background-color: rgba(115, 0, 157, 0.171);
   border-radius: 10px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
@@ -45,20 +51,18 @@ body {
   width: 80%;
   display: block;
   margin: auto;
-  padding: 20px 15px;
+  padding: 15px 10px;
   background-color: #3b00509c;
   color: #fff;
   border-radius: 15px;
   font-size: 20px;
-  border: none;
+  border: 1px solid #ffc8003d;
   box-shadow: 5px 10px 15px #00000065;
   cursor: pointer;
   transition: 0.3 ease-in-out;
 }
 .container-body a button:hover {
   background-color: #3b0050fb;
-  transform: scale(1.05);
-  border: 1px solid #ffc8007e;
 }
 .container-body a button:active {
   background-color: #90b68f;
@@ -67,8 +71,8 @@ body {
 .logo {
   position: relative;
   margin-bottom: 2rem;
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
 }
 .logo img {
   position: absolute;
@@ -76,6 +80,7 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  border: 1px solid #ffc8003d;
   box-shadow: 0 0 35px #73009d9f;
   animation: flutuar 2s ease-in-out infinite alternate;
 }
@@ -93,7 +98,13 @@ body {
 
 @media screen and (max-width: 768px) {
   body {
+    background-image: url(/img/bacground-mobile.svg);
+  }
+  .box-body {
     padding: 0 2%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
   }
   .container-body {
     width: 90%;

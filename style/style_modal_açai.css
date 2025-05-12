@@ -23,7 +23,7 @@
   z-index: 100;
   position: fixed;
   width: 70%;
-  height: 80%;
+  height: 90%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -39,57 +39,93 @@
   opacity: 1;
   pointer-events: auto;
 }
-
-.modal-acai .modal-img {
-  width: 55%;
-  height: 100%;
+.modal-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 40%;
+  border-right: 2px solid var(--branco-gelo);
 }
 
-.modal-acai .modal-img img {
+.modal-content .descricao .modal-title {
+  font-family: "Fredoka One", sans-serif !important;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 0.4rem;
+  text-decoration: underline;
+}
+
+.modal-content .descricao .modal-price {
+  font-size: 30px;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: 600;
+  overflow-y: auto;
+}
+.modal-content button {
+  position: relative;
+  width: 80%;
+  padding: 10px 15px;
+  background-color: var(--roxo-profundao);
+  color: var(--branco-gelo);
+  border-radius: 15px;
+  font-size: 20px;
+  border: none;
+  box-shadow: 5px 10px 15px #00000065;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.modal-content button:hover {
+  transform: scale(1.02);
+  background-color: #4c0181;
+  border: 1px solid var(--lilas-suave);
+  color: var(--branco-gelo);
+}
+.modal-content button:active {
+  background-color: var(--verde-menta);
+  border: 1px solid var(--verde-menta);
+  transform: scale(1.05);
+}
+
+.modal-content .modal-img {
+  width: 100%;
+  height: 70%;
+}
+
+.modal-content .modal-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
 }
 
 .container {
-  width: 45%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px 2%;
+  padding: 0 2%;
 }
 .container .descricao {
   width: 100%;
+  height: 30%;
   align-items: center;
-  padding: 10px 15px;
-  margin-top: 1rem;
-}
-.container .descricao .modal-title {
-  font-family: "Fredoka One", sans-serif !important;
-  font-size: 30px;
-  text-align: center;
-  text-decoration: underline;
+  padding: 5px 15px;
 }
 
-.container .descricao .modal-price {
-  font-size: 35px;
-  text-align: center;
-  padding: 25px 0;
-  font-weight: 600;
-  overflow-y: auto;
-}
 .adicionais {
   width: 100%;
-  height: 400px;
+  height: 70%;
 }
 .adicionais p {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
 }
 form {
   width: 100%;
+  height: 100%;
   max-width: auto;
   margin: 1rem auto;
 }
@@ -100,6 +136,10 @@ fieldset {
   border-radius: 10px;
   background-color: var(--roxo-profundao);
   color: var(--branco-gelo);
+  width: 100%;
+  height: 95%;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 
 legend {
@@ -120,33 +160,6 @@ fieldset {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 0.75rem 1rem;
-}
-
-.container button {
-  position: relative;
-  width: 80%;
-  padding: 10px 15px;
-  background-color: var(--roxo-profundao);
-  color: var(--branco-gelo);
-  border-radius: 15px;
-  font-size: 20px;
-  border: none;
-  box-shadow: 5px 10px 15px #00000065;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  z-index: 2;
-}
-
-.container button:hover {
-  transform: scale(1.02);
-  background-color: #4c0181;
-  border: 1px solid var(--lilas-suave);
-  color: var(--branco-gelo);
-}
-.container button:active {
-  background-color: var(--verde-menta);
-  border: 1px solid var(--verde-menta);
-  transform: scale(1.05);
 }
 
 #fecharModal {
@@ -181,23 +194,32 @@ fieldset {
 @media screen and (max-width: 768px) {
   .modal-acai {
     flex-direction: column;
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
     padding-bottom: 50px;
   }
 
-  .modal-acai .modal-img {
+  .modal-content .modal-img {
     width: 100%;
-    height: 40%;
+    height: 70%;
   }
-
+  .modal-content {
+    width: 100%;
+    height: 50%;
+    border: none;
+  }
+  .modal-content button {
+    position: absolute;
+    bottom: 1.5rem;
+  }
   .modal-acai .modal-img img {
     border-top-right-radius: 10px;
-    border-bottom-left-radius: 0;
+    border-top-left-radius: 10px;
   }
 
   .container {
     width: 100%;
+    height: 40%;
   }
   .container .descricao {
     width: 100%;
@@ -214,7 +236,7 @@ fieldset {
   .container .descricao .modal-price {
     font-size: 30px;
     text-align: center;
-    padding: 10px 0;
+    padding: 0;
   }
   .adicionais {
     width: 100%;
@@ -230,11 +252,11 @@ fieldset {
     width: 100%;
     max-width: auto;
     margin: 0 auto;
-    height: 200px;
+    height: 300px;
   }
 
   fieldset {
-    height: 180px;
+    height: 300px;
     border: 2px solid var(--lilas-suave);
     padding: 1rem;
     border-radius: 10px;
