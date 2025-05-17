@@ -207,8 +207,6 @@ document.querySelector(".finalizar").addEventListener("click", () => {
   const complemento = document.querySelector('input[name="complemento"]').value;
 
   const pagamento = document.querySelector('input[name="pagamento"]:checked');
-  const listaItens = document.querySelectorAll(".lista-itens li");
-  const total = document.querySelector(".total").textContent.trim();
 
   if (
     !nome ||
@@ -217,7 +215,7 @@ document.querySelector(".finalizar").addEventListener("click", () => {
     !numero ||
     !bairro ||
     !pagamento ||
-    listaItens.length === 0
+    carrinho.length === 0
   ) {
     alert(
       "Preencha todos os campos obrigatórios e adicione pelo menos um item ao carrinho."
@@ -231,11 +229,18 @@ document.querySelector(".finalizar").addEventListener("click", () => {
   if (complemento) mensagem += `Complemento: ${complemento}\n\n`;
   mensagem += `🍧 *Itens do Pedido:*\n`;
 
-  listaItens.forEach((item, index) => {
-    mensagem += `${index + 1}°. ${item.textContent.trim()}\n`;
+  carrinho.forEach((item, index) => {
+    mensagem += `${index + 1}°. ${item.titulo} - Quantidade: ${
+      item.quantidade
+    }\nSubtotal: R$${item.preco.toFixed(2)}\n`;
+    if (item.adicionais.length > 0) {
+      mensagem += `Adicionais: ${item.adicionais.join(", ")}\n`;
+    }
+    mensagem += `\n`;
   });
 
-  mensagem += `\n💰 *${total}*\n`;
+  const total = carrinho.reduce((acc, item) => acc + item.total, 0).toFixed(2);
+  mensagem += `\n💰 *Total: R$${total}*\n`;
   mensagem += `💳 *Pagamento:* ${pagamento.value}\n`;
 
   const numeroWhats = "+5588981252883";
