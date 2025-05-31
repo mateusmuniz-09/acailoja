@@ -65,37 +65,28 @@ modal.addEventListener("click", function (event) {
   if (modalParent) {
     const titulo = modal.querySelector(".modal-title").textContent;
     let quantidade = 1;
-    const preco = parseFloat(
-      modal
-        .querySelector(".modal-price")
-        .textContent.replace(/[^0-9,.]/g, "")
-        .replace(",", ".")
-    );
     const adicionais = Array.from(
       document.querySelectorAll('input[name="mix"]:checked')
     ).map((checkbox) => checkbox.value);
+    const cremes = Array.from(
+      document.querySelectorAll('input[name="mix-cremes"]:checked')
+    ).map((checkbox) => checkbox.value);
 
-    /*  const itemExistente = carrinho.find((item) => item.titulo === titulo);
+    const coberturas = Array.from(
+      document.querySelectorAll('input[name="mix-cobertura"]:checked')
+    ).map((checkbox) => checkbox.value);
 
-    if (itemExistente) {
-      itemExistente.quantidade += quantidade;
-      itemExistente.total = itemExistente.preco * itemExistente.quantidade;
-    } else {
-      carrinho.push({
-        titulo,
-        quantidade,
-        preco,
-        adicionais,
-        total: preco,
-      });
-    } */
+    const frutas = Array.from(
+      document.querySelectorAll('input[name="mix-fruta"]:checked')
+    ).map((checkbox) => checkbox.value);
 
     carrinho.push({
       titulo,
       quantidade,
-      preco,
       adicionais,
-      total: preco,
+      cremes,
+      coberturas,
+      frutas,
     });
     resetarForm();
     Swal.fire({
@@ -116,31 +107,31 @@ modal.addEventListener("click", function (event) {
 
 function atualizarCart() {
   cartItem.innerHTML = "";
-  let totalPAgar = 0;
 
   carrinho.forEach((item, index) => {
     const cartTitulo = item.titulo;
     const cartQtd = item.quantidade;
-    const cartPreco = item.preco;
     const cartAdc = item.adicionais;
-    const valorFinal = item.total;
-    totalPAgar += valorFinal;
+    const cartCremes = item.cremes;
+    const cartCober = item.coberturas;
+    const cartFrut = item.frutas;
+
     const produto = document.createElement("li");
     produto.innerHTML = `
      <div class="item-pedido">
     <div>
     <p><strong>${cartTitulo}</strong></p>
     <p><strong>Quantidade: </strong>${cartQtd}</p>
-    <p><strong>Subtotal: </strong>R$${cartPreco.toFixed(2)}</p>
     <p><strong>Adicionais: </strong> ${cartAdc.join(", ")}</p>
+     <p><strong>Cremes: </strong> ${cartCremes.join(", ")}</p>
+     <p><strong>Coberturas: </strong> ${cartCober.join(", ")}</p>
+     <p><strong>Frutas: </strong> ${cartFrut.join(", ")}</p>
     </div>
     <button class="remove" data-index="${index}">Remover</button>
      </div>
     `;
     cartItem.appendChild(produto);
   });
-
-  cartTotal.innerHTML = `<strong>Total: </strong>R$${totalPAgar.toFixed(2)}`;
 
   const contador = document.getElementById("contador");
 
@@ -161,12 +152,12 @@ document.addEventListener("click", function (event) {
   }
 });
 /*   ----------------- limitador de adiconais------------ */
-
+/*
 const checkboxes = document.querySelectorAll(
   'input[type="checkbox"][name="mix"]'
 );
 
-checkboxes.forEach((checkbox) => {
+ checkboxes.forEach((checkbox) => {
   checkbox.addEventListener("change", () => {
     const selecionados = Array.from(checkboxes).filter((c) => c.checked);
 
@@ -193,9 +184,11 @@ checkboxes.forEach((checkbox) => {
     }
   });
 });
-
+ */
 function resetarForm() {
-  document.querySelector(".form-adicionais").reset();
+  document.querySelectorAll(".form-adicionais").forEach((form) => {
+    form.reset();
+  });
 }
 
 document.querySelector(".finalizar").addEventListener("click", () => {
@@ -232,15 +225,15 @@ document.querySelector(".finalizar").addEventListener("click", () => {
   carrinho.forEach((item, index) => {
     mensagem += `${index + 1}°. ${item.titulo} - Quantidade: ${
       item.quantidade
-    }\nSubtotal: R$${item.preco.toFixed(2)}\n`;
+    }\n`;
     if (item.adicionais.length > 0) {
-      mensagem += `Adicionais: ${item.adicionais.join(", ")}\n`;
+      mensagem += `Acompanhamentos: ${item.adicionais.join(", ")}\n`;
+      mensagem += `Cremes: ${item.cremes.join(", ")}\n`;
+      mensagem += `Frutas: ${item.frutas.join(", ")}\n`;
+      mensagem += `Coberturas: ${item.coberturas.join(", ")}\n`;
     }
     mensagem += `\n`;
   });
-
-  const total = carrinho.reduce((acc, item) => acc + item.total, 0).toFixed(2);
-  mensagem += `\n💰 *Total: R$${total}*\n`;
   mensagem += `💳 *Pagamento:* ${pagamento.value}\n`;
 
   const numeroWhats = "+5588981252883";

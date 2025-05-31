@@ -33,6 +33,7 @@
   box-shadow: 5px 5px 20px #2e003eb9;
   pointer-events: none;
   transition: 0.5s ease-in-out;
+  padding: 10px;
 }
 .modal-acai.show {
   visibility: visible;
@@ -44,6 +45,7 @@
   align-items: center;
   flex-direction: column;
   width: 40%;
+  padding: 10px;
   border-right: 2px solid var(--branco-gelo);
 }
 
@@ -53,6 +55,7 @@
   text-align: center;
   margin-top: 0.4rem;
   text-decoration: underline;
+  color: #fff;
 }
 
 .modal-content .descricao .modal-price {
@@ -60,6 +63,7 @@
   text-align: center;
   padding: 10px 0;
   font-weight: 600;
+  color: #fff;
   overflow-y: auto;
 }
 .modal-content button {
@@ -70,7 +74,7 @@
   color: var(--branco-gelo);
   border-radius: 15px;
   font-size: 20px;
-  border: none;
+  border: 1px solid transparent;
   box-shadow: 5px 10px 15px #00000065;
   cursor: pointer;
   transition: 0.3s ease-in-out;
@@ -78,7 +82,6 @@
 }
 
 .modal-content button:hover {
-  transform: scale(1.02);
   background-color: #4c0181;
   border: 1px solid var(--lilas-suave);
   color: var(--branco-gelo);
@@ -86,7 +89,7 @@
 .modal-content button:active {
   background-color: var(--verde-menta);
   border: 1px solid var(--verde-menta);
-  transform: scale(1.05);
+  transform: scale(0.98);
 }
 
 .modal-content .modal-img {
@@ -98,7 +101,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-top-left-radius: 10px;
+  border-radius: 50%;
 }
 
 .container {
@@ -107,6 +110,8 @@
   flex-direction: column;
   align-items: center;
   padding: 0 2%;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 .container .descricao {
   width: 100%;
@@ -123,11 +128,14 @@
   font-size: 15px;
   font-weight: 600;
 }
-form {
+.form-adicionais {
   width: 100%;
-  height: 100%;
-  max-width: auto;
-  margin: 1rem auto;
+}
+.forms-acompanhamentos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 fieldset {
@@ -200,26 +208,26 @@ fieldset {
   }
 
   .modal-content .modal-img {
-    width: 100%;
-    height: 70%;
+    width: 100px;
+    height: 100px;
   }
   .modal-content {
     width: 100%;
-    height: 50%;
+    height: auto;
     border: none;
   }
   .modal-content button {
     position: absolute;
-    bottom: 1.5rem;
+    bottom: 2rem;
   }
   .modal-acai .modal-img img {
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    border-radius: 50%;
   }
 
   .container {
     width: 100%;
-    height: 40%;
+    height: 450px;
+    overflow-y: auto;
   }
   .container .descricao {
     width: 100%;
@@ -240,7 +248,6 @@ fieldset {
   }
   .adicionais {
     width: 100%;
-    height: 250px;
   }
 
   .adicionais p {
@@ -256,12 +263,19 @@ fieldset {
   }
 
   fieldset {
-    height: 300px;
+    height: 200px;
     border: 2px solid var(--lilas-suave);
     padding: 1rem;
     border-radius: 10px;
     background-color: var(--roxo-profundao);
     color: var(--branco-gelo);
     overflow: auto;
+  }
+  .forms-acompanhamentos {
+    width: 100%;
+    flex-direction: column;
+  }
+  .forms-acompanhamentos form {
+    flex: 1;
   }
 }

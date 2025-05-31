@@ -24,120 +24,130 @@
   box-sizing: border-box;
   font-family: poppins, sans-serif;
 }
-
 body {
-  background: var(--roxo-acai);
-  color: var(--branco-gelo);
-  height: 100svh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.botoes {
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
   width: 100%;
-  height: 15%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 5%;
 }
-.acai {
+header {
   width: 100%;
-  height: 85%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: right;
+  padding: 10px 4%;
+  background: linear-gradient(to right, #2e0b3d, #2e003e);
+  position: relative;
+  height: 150px;
 }
-.container-acai {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  width: 70%;
-  height: 100%;
+header img {
+  position: absolute;
+  border: 4px solid #fff;
+  left: 50px;
+  bottom: -50px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.informativo {
+  width: 90%;
+  max-width: 500px;
   margin: 0 auto;
-  padding: 1rem 0;
+  padding: 20px;
 }
-.container-acai .box-acai {
-  flex: 1;
+.informativo h1 {
+  text-align: center;
+  color: #2e003e;
+  font-size: 35px;
+}
+.informativo .info-tempo {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333d0;
+  gap: 1rem;
+  margin-bottom: 15px;
+}
+
+.informativo .info-funcionamento {
+  border: 1px solid #00000056;
+  border-radius: 5px;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  color: #333333d0;
+}
+
+.h2-primeiro {
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+  border-bottom: 2px solid #33333369;
+}
+
+.container-acai {
+  max-width: 1000px;
+  width: 95%;
+  margin: 0 auto;
+}
+.box-acai {
+  display: flex;
+  width: 100%;
+  border-bottom: 2px solid #33333367;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.box-button {
+  margin-left: auto;
+
   height: 100%;
+}
+.box-button button {
+  padding: 10px 15px;
+  border: none;
   border-radius: 10px;
-  background-color: var(--roxo-profundao);
-  box-shadow: 5px 5px 25px 5px #0000006b;
+  background-color: #73009d;
+  color: #fff;
+  box-shadow: 2px 5px 8px #00000073;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.box-button button:hover {
+  background-color: #520070;
 }
 .container-acai .box-acai .box-img {
-  width: 100%;
-  height: 60%;
-  overflow: hidden;
+  width: 120px;
+  height: 170px;
 }
-.container-acai .box-acai .box-img img {
-  transition: transform 0.3s ease-in-out;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+
+.container-acai .box-acai img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  border-radius: 10px;
 }
-.container-acai .box-acai .descricao {
-  width: 100%;
-  height: 40%;
+
+.descricao {
+  padding: 0 15px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  align-items: center;
+  gap: 10px;
 }
-
-.container-acai .box-acai .descricao .title {
+.descricao .title {
+  color: #4b0082;
+  font-size: 24px;
   font-family: "Fredoka One", sans-serif !important;
+}
+.descricao .price {
   font-size: 20px;
-  padding-bottom: 20px;
-  color: var(--verde-menta);
-  text-decoration: underline;
-}
-.container-acai .box-acai .descricao .price {
-  font-size: 30px;
+  text-align: center;
   font-weight: 600;
-  padding-bottom: 20px;
+  color: #555555;
 }
-
-.descricao .box-button {
-  width: 100%;
-  height: 50px;
-  margin-inline: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.descricao .box-button button {
-  position: relative;
-  width: 80%;
-  padding: 10px 15px;
-  background-color: var(--lilas-suave);
-  color: var(--roxo-profundao);
-  border-radius: 15px;
-  font-size: 15px;
-  border: none;
-  box-shadow: 5px 10px 15px #00000065;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  z-index: 2;
-}
-.descricao button:hover {
-  transform: scale(1.02);
-  background-color: #5f0081fb;
-  border: 1px solid var(--lilas-suave);
-  color: var(--branco-gelo);
-}
-.descricao button:active {
-  background-color: var(--verde-menta);
-  border: 1px solid var(--verde-menta);
-  transform: scale(1.05);
-}
-
 .inicio {
+  margin-left: auto;
   padding: 10px 15px;
   border-radius: 10px;
   border: 0.5px solid #f8f8ff69;
@@ -150,7 +160,6 @@ body {
   justify-content: center;
   align-items: center;
   transition: 0.2s ease-in-out;
-  animation: flutuar 2s ease-in-out infinite alternate;
 }
 
 .inicio:hover {
@@ -166,7 +175,9 @@ body {
   align-items: center;
 }
 .cart {
-  position: relative;
+  position: fixed;
+  bottom: 30px;
+  right: 50px;
   padding: 10px 15px;
   border-radius: 10px;
   border: 0.5px solid #f8f8ff69;
@@ -179,7 +190,6 @@ body {
   justify-content: center;
   align-items: center;
   transition: 0.2s ease-in-out;
-  animation: flutuar 2s ease-in-out infinite alternate;
 }
 .cart:hover {
   background-color: var(--roxo-escuro);
@@ -222,54 +232,46 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  body {
-    height: auto;
+  header {
+    height: 120px;
   }
-  .botoes {
-    padding: 30px 20px;
+  .informativo {
+    margin-top: 50px;
+    padding-bottom: 0;
   }
-  .inicio {
-    font-size: 15px;
-  }
-  .cart {
-    font-size: 15px;
+  .informativo h1 {
+    font-size: 24px;
   }
 
-  .container-acai {
-    flex-direction: column;
-    gap: 2rem;
-    width: 100%;
-    margin: 2rem 0;
-  }
-
-  .container-acai .box-acai {
-    width: 90%;
-    height: auto;
-  }
   .container-acai .box-acai .box-img {
-    width: 100%;
-    height: 400px;
+    width: 100px;
+    height: 100px;
   }
   .container-acai .box-acai .box-img img {
     object-fit: cover;
   }
   .container-acai .box-acai .descricao {
-    width: 100%;
-    height: auto;
-    padding: 15px;
   }
 
   .container-acai .box-acai .descricao .title {
-    font-size: 20px;
-    padding: 15px 0;
+    font-size: 15px;
+    text-align: center;
   }
   .container-acai .box-acai .descricao .price {
-    font-size: 30px;
-    margin: 0;
+    font-size: 12px;
+    white-space: nowrap;
   }
-
-  .descricao .box-button button {
-    width: 70%;
-    font-size: 15px;
+  .container-acai .box-acai .descricao .desc-info {
+    font-size: 12px;
+    text-align: center;
+  }
+  .box-button button {
+    font-size: 11px;
+  }
+  .cart {
+    width: 100%;
+    right: 0;
+    border-radius: 0;
+    bottom: 10px;
   }
 }

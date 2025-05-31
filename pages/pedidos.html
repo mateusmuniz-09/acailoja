@@ -24,10 +24,11 @@
 
     <script src="/script/script_modal.js" defer></script>
     <title>Açaí Borcelle</title>
-    <script src="index.js" defer></script>
   </head>
   <body>
-    <div class="botoes">
+    <header class="header">
+      <img src="/img/logo-oficial.svg" alt="" />
+
       <a href="/index.html">
         <button class="inicio"><i class="bi bi-chevron-left"></i>Início</button>
       </a>
@@ -35,49 +36,63 @@
       <button class="cart">
         <i class="bi bi-cart-check"></i>Meu Pedido <span id="contador"></span>
       </button>
+    </header>
+
+    <div class="informativo">
+      <h1>Açaiteria Borcelle</h1>
+      <div class="info-tempo">
+        <p>icone 20 - 30min</p>
+        <p>link mapa</p>
+      </div>
+      <div class="info-funcionamento"><p>fechados</p></div>
     </div>
 
-    <main class="acai">
+    <h2 class="h2-primeiro">Faça já o seu pedido 😋</h2>
+
+    <div class="acai">
       <div class="container-acai">
         <div class="box-acai">
           <div class="box-img">
-            <img src="/img/acai3.jpg" alt="açai de 300ml" />
+            <img src="/img/um-poquim.jpg" alt="açai de 300ml" />
           </div>
           <div class="descricao">
-            <p class="title">Açaí 300ml</p>
-            <p class="price" data-price="12">R$12,00</p>
-            <div class="box-button">
-              <button>Personalizar Pedido</button>
-            </div>
+            <p class="title">Um Poquim</p>
+            <p class="price" data-price="12">R$10,00 à R$14,00</p>
+            <p class="desc-info">2 cremes e 4 adicionais</p>
+          </div>
+          <div class="box-button">
+            <button>Personalizar Pedido</button>
           </div>
         </div>
 
         <div class="box-acai">
           <div class="box-img">
-            <img src="/img/acai2.jpg" alt="açai de 500ml" />
+            <img src="/img/to-com-fome.jpg" alt="açai de 500ml" />
           </div>
           <div class="descricao">
-            <p class="title">Açaí 500ml</p>
-            <p class="price" data-price="">R$18,00</p>
-            <div class="box-button">
-              <button>Personalizar Pedido</button>
-            </div>
+            <p class="title">Tô Com Fome</p>
+            <p class="price">R$15,00 à R$20,00</p>
+            <p class="desc-info">3 cremes e 5 adicionais</p>
+          </div>
+          <div class="box-button">
+            <button>Personalizar Pedido</button>
           </div>
         </div>
         <div class="box-acai">
           <div class="box-img">
-            <img src="/img/acai1.jpg" alt="açai de 1000ml" />
+            <img src="/img/da-pra-dividir.jpg" alt="açai de 1000ml" />
           </div>
           <div class="descricao">
-            <p class="title">Açaí 1000ml</p>
-            <p class="price" data-price="25">R$25,00</p>
-            <div class="box-button">
-              <button>Personalizar Pedido</button>
-            </div>
+            <p class="title">Dá Pra Dividir</p>
+            <p class="price">R$22,00 ou mais</p>
+            <p class="desc-info">4 cremes e 6 adicionais</p>
+          </div>
+          <div class="box-button">
+            <button>Personalizar Pedido</button>
           </div>
         </div>
       </div>
-    </main>
+    </div>
 
     <div class="modal-acai" id="modal">
       <i class="bi bi-x-circle" id="fecharModal"></i>
@@ -97,70 +112,202 @@
       </div>
       <div class="container">
         <form class="form-adicionais">
-          <p>Selecione ate 5 adicionais:</p>
           <fieldset>
-            <legend>Adicionais:</legend>
+            <legend>Acompanhamentos:</legend>
             <label
-              ><input type="checkbox" name="mix" value="banana" /> Banana</label
+              ><input type="checkbox" name="mix" value="Paçoquinha" />
+              Paçoquinha</label
             >
             <label
-              ><input type="checkbox" name="mix" value="morango" />
-              Morango</label
+              ><input type="checkbox" name="mix" value="Cereja" /> cereja</label
             >
             <label
-              ><input type="checkbox" name="mix" value="kiwi" /> Kiwi</label
+              ><input type="checkbox" name="mix" value="Amendoin" />
+              Amendoin</label
             >
             <label
-              ><input type="checkbox" name="mix" value="manga" /> Manga</label
-            >
-            <label
-              ><input type="checkbox" name="mix" value="blueberry" />
-              Blueberry</label
-            ><label
-              ><input type="checkbox" name="mix" value="granola" />
+              ><input type="checkbox" name="mix" value="Granola" />
               Granola</label
             >
             <label
-              ><input type="checkbox" name="mix" value="aveia" /> Aveia</label
+              ><input type="checkbox" name="mix" value="Leite em pó" /> Leite em
+              pó</label
+            ><label
+              ><input type="checkbox" name="mix" value="Ovomaltine" />
+              Ovomaltine</label
             >
             <label
-              ><input type="checkbox" name="mix" value="sucrilhos" />
+              ><input type="checkbox" name="mix" value="MM's" /> MM's</label
+            >
+            <label
+              ><input type="checkbox" name="mix" value="Castanha" />
+              Castanha</label
+            >
+            <label
+              ><input type="checkbox" name="mix" value="Chocopower" />
+              Chocopower</label
+            >
+            <label
+              ><input type="checkbox" name="mix" value="Jujuba" /> Jujuba</label
+            >
+            <label
+              ><input type="checkbox" name="mix" value="Marshmallow" />
+              Marshmallow</label
+            >
+            <label
+              ><input type="checkbox" name="mix" value="Tubets" /> Tubets</label
+            >
+            <label
+              ><input type="checkbox" name="mix" value="Sucrilhos" />
               Sucrilhos</label
             >
             <label
-              ><input type="checkbox" name="mix" value="flocos-arroz" /> Flocos
-              de arroz</label
+              ><input type="checkbox" name="mix" value="Mesclado" />
+              Mesclado</label
             >
             <label
-              ><input type="checkbox" name="mix" value="leite-condensado" />
+              ><input
+                type="checkbox"
+                name="mix"
+                value="Castanha caramelizada"
+              />
+              Castanha caramelizada</label
+            >
+            <label
+              ><input type="checkbox" name="mix" value="Gota de chocolate" />
+              Gota de chocolate</label
+            >
+            <label
+              ><input type="checkbox" name="mix" value="Calda de morango" />
+              Calda de morango</label
+            >
+            <label
+              ><input type="checkbox" name="mix" value="Leite condensado" />
               Leite condensado</label
             >
             <label
-              ><input type="checkbox" name="mix" value="nutella" />
-              Nutella</label
+              ><input type="checkbox" name="mix" value="Cookies branco" />
+              Cookies branco</label
             >
             <label
-              ><input type="checkbox" name="mix" value="paçoca" /> Paçoca</label
-            >
-            <label><input type="checkbox" name="mix" value="mel" /> Mel</label>
-            <label
-              ><input type="checkbox" name="mix" value="castanhas" />
-              Castanhas</label
+              ><input type="checkbox" name="mix" value="Farinha láctea" />
+              Farinha láctea</label
             >
             <label
-              ><input type="checkbox" name="mix" value="chocolate-granulado" />
-              Chocolate granulado</label
+              ><input type="checkbox" name="mix" value="Creme de avelã" /> Creme
+              de avelã</label
             >
             <label
-              ><input type="checkbox" name="mix" value="coco-ralado" /> Coco
-              ralado</label
+              ><input type="checkbox" name="mix" value="Ganache" />
+              Ganache</label
             >
             <label
-              ><input type="checkbox" name="mix" value="leite-em-po" /> Leite em
-              pó</label
+              ><input type="checkbox" name="mix" value="Fini beijos" /> Fine
+              beijos</label
+            >
+            <label
+              ><input type="checkbox" name="mix" value="Fini amora" /> Fini
+              amora</label
             >
           </fieldset>
         </form>
+        <div class="forms-acompanhamentos">
+          <form class="form-adicionais">
+            <fieldset>
+              <legend>Cremes:</legend>
+              <label
+                ><input
+                  type="checkbox"
+                  name="mix-cremes"
+                  value="Creme de Ninho"
+                />
+                Ninho</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="mix-cremes"
+                  value="Creme de Maracujá"
+                />
+                Maracujá</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="mix-cremes"
+                  value="Creme de Morango"
+                />
+                Morango</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="mix-cremes"
+                  value=" Creme Ovomaltine"
+                />
+                Ovomaltine</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="mix-cremes"
+                  value="Creme de Cupuaçu"
+                />
+                Cupuaçu</label
+              >
+            </fieldset>
+          </form>
+          <form class="form-adicionais">
+            <fieldset>
+              <legend>Coberturas:</legend>
+              <label
+                ><input
+                  type="checkbox"
+                  name="mix-cobertura"
+                  value="Chocolate"
+                />
+                Chocolate</label
+              >
+              <label
+                ><input type="checkbox" name="mix-cobertura" value="Morango" />
+                Morango</label
+              >
+              <label
+                ><input type="checkbox" name="mix-cobertura" value="Menta" />
+                Menta</label
+              >
+              <label
+                ><input type="checkbox" name="mix" value="Caramelo" />
+                Caramelo</label
+              >
+              <label
+                ><input type="checkbox" name="mix-cobertura" value="Limão" />
+                Limão</label
+              >
+            </fieldset>
+          </form>
+          <form class="form-adicionais">
+            <fieldset>
+              <legend>Frutas:</legend>
+              <label
+                ><input type="checkbox" name="mix-fruta" value="Morango" />
+                Morango</label
+              >
+              <label
+                ><input type="checkbox" name="mix-fruta" value="Kiwi" />
+                Kiwi</label
+              >
+              <label
+                ><input type="checkbox" name="mix-fruta" value="Uva passas" />
+                Uva passas</label
+              >
+              <label
+                ><input type="checkbox" name="mix-fruta" value="Manga" />
+                Manga</label
+              >
+            </fieldset>
+          </form>
+        </div>
       </div>
     </div>
     <div class="overlay-geral"></div>
@@ -219,5 +366,16 @@
 
       <button class="finalizar">Finalizar Pedido</button>
     </div>
+    <!-- Firebase Core -->
+    <script src="https://www.gstatic.com/firebasejs/11.8.0/firebase-app-compat.js"></script>
+
+    <!-- Firebase Auth (opcional, se usar login) -->
+    <script src="https://www.gstatic.com/firebasejs/11.8.0/firebase-auth-compat.js"></script>
+
+    <!-- Firebase Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/11.8.0/firebase-firestore-compat.js"></script>
+
+    <script src="/script/fire-base-init.js"></script>
+    <script src="/script/updates-data.js"></script>
   </body>
 </html>
